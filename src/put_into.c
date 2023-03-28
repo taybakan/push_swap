@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 00:10:34 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/28 10:24:12 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/28 13:59:04 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,13 +45,14 @@ void    ft_put_a(t_swap *data)
     data -> numbers = ft_split(data -> str, ' ');
     while(data -> numbers[i])
         i++;
+    data -> len_a = i;
     data -> s_a = malloc(sizeof(int *) * i);
+    data -> s_b = malloc(sizeof(int *) * i);
     i = 0;
     while(data -> numbers[i])
     {
-        data -> s_a[i] = ft_atoi(data -> numbers[i]);
+        data -> s_a[data -> len_a - i - 1] = ft_atoi(data -> numbers[i]);
         i++;
     }
-    data -> len_a = i;
     ft_checkdup(data);
 }
