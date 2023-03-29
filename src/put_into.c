@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 00:10:34 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/28 13:59:04 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/29 23:11:11 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ int     ft_checkdup(t_swap *data)
         }
         i++;
     }
-    sa(data);
     return (0);
 }
 
@@ -46,8 +45,9 @@ void    ft_put_a(t_swap *data)
     while(data -> numbers[i])
         i++;
     data -> len_a = i;
-    data -> s_a = malloc(sizeof(int *) * i);
-    data -> s_b = malloc(sizeof(int *) * i);
+    data -> len_b = 0;
+    data -> s_a = malloc(sizeof(int *) * (i + 1));
+    data -> s_b = malloc(sizeof(int *) * (i + 1));
     i = 0;
     while(data -> numbers[i])
     {

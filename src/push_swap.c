@@ -6,11 +6,25 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:27:35 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/28 00:10:20 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/30 01:21:59 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+int		ft_issorted(t_swap *data)
+{
+	int		i;
+
+	i = 0;
+	while(i < data->len_a - 1)
+	{
+		if(data->len_a[i] > data->len_a[i + 1])
+			return (0);
+		i++;
+	}
+	return (1);
+}
 
 int		main(int argc, char **argv)
 {
@@ -21,5 +35,14 @@ int		main(int argc, char **argv)
 	ft_check_argv(argv);
 	ft_combargv(data, argv, argc);
 	ft_put_a(data);
+	if (ft_issorted(data))
+		return(write(1, "\n", 1));
+	int	i = 0;
+	while(data->len_a > 0)
+	{
+		ft_printf("%d\t", data->s_a[i]);
+		i++;
+		data->len_a--;
+	}
 	return (0);
 }

@@ -1,6 +1,6 @@
 NAME = push_swap
 CFLAGS = -Wall -Wextra -Werror
-SRCS = push_swap.c error_exit.c checkarg.c put_into.c push_and_swap.c
+SRCS = push_swap.c error_exit.c checkarg.c put_into.c pusha.c pushb.c swap.c rotate.c revrotate.c
 OBJS = $(SRCS:.c=.o)
 LIB = ./lib/libft/libft.a ./lib/ft_printf/libftprintf.a
 CC = gcc
