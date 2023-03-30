@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 00:15:33 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/30 00:01:08 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/30 04:33:13 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,7 @@ int		ft_check_comb(t_swap *data);
 int		ft_error(char *str);
 void	ft_put_a(t_swap *data);
 int     ft_checkdup(t_swap *data);
+int		radix_sort(t_swap *data);
 int     sa(t_swap *data);
 int     sb(t_swap *data);
 int     pa(t_swap *data);
@@ -50,5 +51,6 @@ int     ft_downone_a(t_swap *data);
 int     ft_upone_b(t_swap *data);
 int     ft_downone_b(t_swap *data);
 int     ft_upone_a(t_swap *data);
+void	change_to_bit(t_swap *data, int j);
 
 #endif

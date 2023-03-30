@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/29 21:57:13 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/29 23:46:31 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/30 03:57:13 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int     pb(t_swap *data)
     data->len_b++;
     ft_downone_a(data);
     data->len_a--;
-    ft_printf("en üstte: %d\n", data->s_b[0]);
+    ft_printf("pb\n");
     return (0);
 }
 

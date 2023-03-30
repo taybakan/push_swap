@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:27:35 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/30 01:21:59 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/30 04:23:10 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int		ft_issorted(t_swap *data)
 {
 	int		i;
 
-	i = 0;
-	while(i < data->len_a - 1)
+	i = data->len_a - 1;
+	while(i > 0)
 	{
-		if(data->len_a[i] > data->len_a[i + 1])
+		if(data->s_a[i] > data->s_a[i - 1])
 			return (0);
-		i++;
+		i--;
 	}
 	return (1);
 }
@@ -37,6 +37,7 @@ int		main(int argc, char **argv)
 	ft_put_a(data);
 	if (ft_issorted(data))
 		return(write(1, "\n", 1));
+	radix_sort(data);
 	int	i = 0;
 	while(data->len_a > 0)
 	{
