@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 00:10:34 by taybakan          #+#    #+#             */
-/*   Updated: 2023/04/01 00:06:09 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/04/01 01:21:49 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int     ft_checkdup(t_swap *data)
         {
             l = data->s_a[j];
             if ((k == l) && (j != i))
-                return(ft_error("duplicate numbers!"));
+                return(ft_error(data));
             j++; 
         }
         i++;
@@ -81,7 +81,7 @@ void    ft_put_a(t_swap *data)
     {
         l = ft_atol(data->numbers[i]);
         if(l > 2147483647 || l < -2147483648)
-            ft_error("long");
+            ft_error(data);
         data->s_a[i] = l;
     }
     ft_checkdup(data);

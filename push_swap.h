@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 00:15:33 by taybakan          #+#    #+#             */
-/*   Updated: 2023/04/01 00:49:42 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/04/01 01:18:26 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,8 @@ typedef struct s_swap
 int		ft_check_argv(char **str);
 int		ft_combargv(t_swap *data, char **argv, int argc);
 int		ft_check_comb(t_swap *data);
-int		ft_error(char *str);
+int		ft_error(t_swap *data);
+void	ft_free(t_swap *data);
 void	ft_put_a(t_swap *data);
 long	ft_atol(const char *str);
 int     ft_checkdup(t_swap *data);
@@ -43,9 +44,9 @@ void	ft_stackdup(t_swap *data);
 void	ft_getindexed(t_swap *data);
 void    ft_getmaxbits(t_swap *data);
 int		ft_find(t_swap *data);
-void		sort_two(t_swap *data);
-void		sort_three(t_swap *data);
-void		sort_five(t_swap *data);
+void	sort_two(t_swap *data);
+void	sort_three(t_swap *data);
+void	sort_five(t_swap *data);
 void	sa(t_swap *data);
 void	sb(t_swap *data);
 void	pa(t_swap *data);

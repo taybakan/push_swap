@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:07:52 by taybakan          #+#    #+#             */
-/*   Updated: 2023/04/01 00:09:09 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/04/01 01:21:18 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ int		ft_check_argv(char **str)
 		{
 			if (str[i][j] != '+' && str[i][j] != '-' && str[i][j] != ' '
 					&& (!(str[i][j] <= '9' && str[i][j] >= '0')))
-					return(ft_error("Error"));
+					exit(write(1, "Error\n", 6));
 			j++;
 		}
 		j = 0;
@@ -44,7 +44,7 @@ int		ft_check_comb(t_swap *data)
 		if(data->str[i] == '+' || data->str[i] == '-')
 		{
 			if(!(data->str[i + 1] <= '9' && data->str[i + 1] >= '0'))
-				return(ft_error("Error"));
+				return(ft_error(data));
 		}
 		i++;
 	}

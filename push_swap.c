@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:27:35 by taybakan          #+#    #+#             */
-/*   Updated: 2023/04/01 00:47:49 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/04/01 01:19:56 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ int		main(int argc, char **argv)
 {
 	t_swap	*data;
 	if (argc < 2)
-		return(ft_error("Not enough arguments!"));
+		exit (1);
 	data = malloc(sizeof(t_swap));
 	ft_check_argv(argv);
 	ft_combargv(data, argv, argc);
@@ -48,5 +48,6 @@ int		main(int argc, char **argv)
 		sort_five(data);
 	else
 		radix_sort(data);
+	ft_free(data);
 	return (0);
 }
