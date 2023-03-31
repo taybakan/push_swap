@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:27:35 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/31 23:37:08 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/04/01 00:47:49 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,20 +40,13 @@ int		main(int argc, char **argv)
 	insertion_sort(data);
 	ft_getindexed(data);
 	ft_getmaxbits(data);
-	radix_sort(data);
-	int i;
-	i = 0;
-	while(i < data->len_a)
-	{
-		ft_printf("%d\n", data->sorted[i]);
-		i++;
-	}
-	i = 0;
-	while(i < data->len_a)
-	{
-		ft_printf("%d\n", data->s_a[i]);
-		i++;
-	}
-	ft_printf("maxbits: %d\n", data->max_bits);
+	if(data->len_a == 2)
+		sort_two(data);
+	else if(data->len_a == 3)
+		sort_three(data);
+	else if(data->len_a == 5)
+		sort_five(data);
+	else
+		radix_sort(data);
 	return (0);
 }

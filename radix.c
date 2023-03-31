@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/30 03:30:28 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/31 23:45:03 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/04/01 00:08:27 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 void	bit_by_bit(t_swap *data, int j)
 {
-    ft_printf("numara: %d\n", data->s_a[0]);
 	if (((data->s_a[0] >> j) & 1) == 0)
 		pb(data);
 	else

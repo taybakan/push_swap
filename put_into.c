@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 00:10:34 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/31 22:59:39 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/04/01 00:06:09 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,13 @@ int     ft_checkdup(t_swap *data)
     int     l;
 
     i = 0;
-    while (i < data -> len_a)
+    while (i < data->len_a)
     {
-        k = data -> s_a[i];
+        k = data->s_a[i];
         j = 0;
-        while (j < data -> len_a)
+        while (j < data->len_a)
         {
-            l = data -> s_a[j];
+            l = data->s_a[j];
             if ((k == l) && (j != i))
                 return(ft_error("duplicate numbers!"));
             j++; 
@@ -69,20 +69,20 @@ void    ft_put_a(t_swap *data)
     long    l;
 
     i = 0;
-    data -> numbers = ft_split(data -> str, ' ');
-    while(data -> numbers[i])
+    data->numbers = ft_split(data->str, ' ');
+    while(data->numbers[i])
         i++;
     data->len_a = i;
     data->len_b = 0;
     data->s_a = malloc(sizeof(int) * (i + 1));
     data->s_b = malloc(sizeof(int) * (i + 1));
     i = -1;
-    while(data -> numbers[++i])
+    while(data->numbers[++i])
     {
-        l = ft_atol(data -> numbers[i]);
+        l = ft_atol(data->numbers[i]);
         if(l > 2147483647 || l < -2147483648)
             ft_error("long");
-        data -> s_a[i] = l;
+        data->s_a[i] = l;
     }
     ft_checkdup(data);
 }
