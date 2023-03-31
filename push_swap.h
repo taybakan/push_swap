@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/26 00:15:33 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/30 10:01:14 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/31 22:57:27 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ typedef struct s_swap
 	int		*s_a;
 	int		*s_b;
 	int		*sorted;
-	int		*indexed;
+	int		max_bits;
 	int		len_a;
 	int		len_b;
 }t_swap;
@@ -35,22 +35,27 @@ int		ft_combargv(t_swap *data, char **argv, int argc);
 int		ft_check_comb(t_swap *data);
 int		ft_error(char *str);
 void	ft_put_a(t_swap *data);
+long	    ft_atol(const char *str);
 int     ft_checkdup(t_swap *data);
 int		radix_sort(t_swap *data);
-void     sa(t_swap *data);
-void     sb(t_swap *data);
-void     pa(t_swap *data);
-void     pb(t_swap *data);
-void     ra(t_swap *data);
-void     rb(t_swap *data);
-void     rr(t_swap *data);
-void     rra(t_swap *data);
-void     rrb(t_swap *data);
-void     rrr(t_swap *data);
-int     ft_downone_a(t_swap *data);
-int     ft_upone_b(t_swap *data);
-int     ft_downone_b(t_swap *data);
-int     ft_upone_a(t_swap *data);
-void	change_to_bit(t_swap *data, int j);
+void	insertion_sort(t_swap *data);
+void	ft_stackdup(t_swap *data);
+void	ft_getindexed(t_swap *data);
+void    ft_getmaxbits(t_swap *data);
+void	sa(t_swap *data);
+void	sb(t_swap *data);
+void	pa(t_swap *data);
+void	pb(t_swap *data);
+void	ra(t_swap *data);
+void	rb(t_swap *data);
+void	rr(t_swap *data);
+void	rra(t_swap *data);
+void	rrb(t_swap *data);
+void	rrr(t_swap *data);
+void	ft_downone_a(t_swap *data);
+void	ft_upone_b(t_swap *data);
+void	ft_downone_b(t_swap *data);
+void	ft_upone_a(t_swap *data);
+void	bit_by_bit(t_swap *data, int j);
 
 #endif

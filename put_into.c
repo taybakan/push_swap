@@ -6,11 +6,12 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/28 00:10:34 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/30 10:09:23 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/31 22:59:39 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include <stdio.h>
 
 int     ft_checkdup(t_swap *data)
 {
@@ -36,20 +37,52 @@ int     ft_checkdup(t_swap *data)
     return (0);
 }
 
+long    ft_atol(const char *str)
+{
+	int	    c;
+	int	    s;
+	long    res;
+
+	c = 0;
+	s = 1;
+	res = 0;
+	while ((str[c] >= '\t' && str[c] <= '\r') || str[c] == ' ')
+		c++;
+	if (str[c] == '+' || str[c] == '-')
+	{
+		if (str[c] == '-')
+			s *= -1;
+		c++;
+	}
+	while (str[c] >= '0' && str[c] <= '9')
+	{
+		res = (str[c] - '0') + (res * 10);
+		c++;
+	}
+	return (res * s);
+}
+
+
 void    ft_put_a(t_swap *data)
 {
-    int i;
+    int     i;
+    long    l;
 
     i = 0;
     data -> numbers = ft_split(data -> str, ' ');
     while(data -> numbers[i])
         i++;
-    data -> len_a = i;
-    data -> len_b = 0;
-    data -> s_a = malloc(sizeof(int *) * (i + 1));
-    data -> s_b = malloc(sizeof(int *) * (i + 1));
+    data->len_a = i;
+    data->len_b = 0;
+    data->s_a = malloc(sizeof(int) * (i + 1));
+    data->s_b = malloc(sizeof(int) * (i + 1));
     i = -1;
     while(data -> numbers[++i])
-        data -> s_a[data -> len_a - i - 1] = ft_atoi(data -> numbers[i]);
+    {
+        l = ft_atol(data -> numbers[i]);
+        if(l > 2147483647 || l < -2147483648)
+            ft_error("long");
+        data -> s_a[i] = l;
+    }
     ft_checkdup(data);
 }

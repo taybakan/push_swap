@@ -6,7 +6,7 @@
 /*   By: taybakan <taybakan@student.42istanbul.c    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 15:27:35 by taybakan          #+#    #+#             */
-/*   Updated: 2023/03/30 10:14:57 by taybakan         ###   ########.fr       */
+/*   Updated: 2023/03/31 23:37:08 by taybakan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int		ft_issorted(t_swap *data)
 	i = data->len_a - 1;
 	while(i > 0)
 	{
-		if(data->s_a[i] > data->s_a[i - 1])
+		if(data->s_a[i] < data->s_a[i - 1])
 			return (0);
 		i--;
 	}
@@ -37,11 +37,23 @@ int		main(int argc, char **argv)
 	ft_put_a(data);
 	if (ft_issorted(data))
 		return(write(1, "\n", 1));
-	ra(data);
-	//while(data->len_a > 0)
-	//{
-	//	ft_printf("%d\t", data->s_a[data->len_a - 1]);
-	//	data->len_a--;
-	//}
+	insertion_sort(data);
+	ft_getindexed(data);
+	ft_getmaxbits(data);
+	radix_sort(data);
+	int i;
+	i = 0;
+	while(i < data->len_a)
+	{
+		ft_printf("%d\n", data->sorted[i]);
+		i++;
+	}
+	i = 0;
+	while(i < data->len_a)
+	{
+		ft_printf("%d\n", data->s_a[i]);
+		i++;
+	}
+	ft_printf("maxbits: %d\n", data->max_bits);
 	return (0);
 }
